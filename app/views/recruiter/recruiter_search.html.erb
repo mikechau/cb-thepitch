@@ -1,14 +1,16 @@
-
+<div class="recruiter_search">
 <h1>Recruiter: type in your company name to view submitted pitches</h1>
+
+<div class="job_description">
 <%= form_tag recruiter_index_url, :method => "get" do %>
   <%= label_tag(:company, "Search for:") %>
   <%= text_field_tag(:company) %>
   <%= submit_tag("Search") %>
 <% end %>
-
+</div>
 
 <p>
   <%= notice %>
 </p>
 
-
+</div>

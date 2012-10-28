@@ -1,15 +1,15 @@
-html {
+html {   
 	padding: 0px;
 	margin: 0px;
 }
 
 body {
-	
+	background-color: black;
 	background-image: url("/assets/background3.jpeg");
-
+	background-repeat: no-repeat;
 	background-position:  absolute;
-
-	background-size: 100% 100%;
+	float: center;
+	background-size: cover;
 	font-size: 20px;
 	font-family: sans-serif;
 	color: white;
@@ -93,3 +93,29 @@ a:link {text-decoration:none; color: #F6AD1A; font-weight: bold;}
 a:visited {text-decoration:none;}
 .search_results a:hover {text-decoration:none;  background-color: #F6AD1A; color: white;}
 a:active {text-decoration:none; color: ##F6AD1A;}
+
+
+.job_description {
+	margin: 0px 100px 0px 100px;
+	padding: 5px;
+	color: white;
+	background-color: black;
+	height: 100%;
+	opacity:0.8;
+}
+
+.recruiter_link {
+	opacity: 0;
+	text-align: center;
+	bottom: auto;
+	margin: 25px 100px 0px 100px;
+}
+
+.recruiter_search {
+	margin: 25px 100px 0px 100px;
+	padding: 5px;
+	color: white;
+	background-color: black;
+	height: 100%;
+	opacity:0.8;
+}
