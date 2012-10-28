@@ -1,0 +1,69 @@
+<% if @pitch.errors.messages.any? %>
+  <ul>
+    <% @pitch.errors.messages.each do |key, value| %>
+      <li>The <%= key %> column <%= value.first %>.</li>
+    <% end %>
+  </ul>
+<% end %>
+
+<p><%= puts "Job ID = #{@pitch.did}" %></p>
+<p><%= puts "Company = #{@pitch.company}" %></p>
+<p><%= puts "Job title = #{@pitch.job_title}" %></p>
+
+<%= form_for @pitch do |f| %>
+
+  <%= f.label :did, "Job ID" %>
+  <%= f.text_field :did, :readonly => true %>
+
+  <%= f.label :job_title, "Job title:" %>
+  <%= f.text_field :job_title, :readonly => true %>
+
+  <%= f.label :company, "Company:" %>
+  <%= f.text_field :company, :readonly => true %>
+
+  <%= f.label :location, "Location:" %>
+  <%= f.text_field :location, :readonly => true %>
+
+  <%= f.label :first_name, "First Name:" %>
+  <%= f.text_field :first_name %>
+  
+  <%= f.label :last_name, "Last Name:" %>
+  <%= f.text_field :last_name %>
+  
+  <%= f.label :email, "email:" %>
+  <%= f.text_field :email %>
+
+  <%= f.label :phone, "phone:" %>
+  <%= f.text_field :phone %>
+
+  <%= f.label :profile_link, "Profile Link:" %>
+  <%= f.text_field :profile_link %>
+
+  <%= f.label :headline, "Headline:" %>
+  <%= f.text_field :headline %>
+
+  <%= f.label :why_you_want_me, "Why you want me:" %>
+  <%= f.text_area :why_you_want_me, :size=> '50x10' %>
+
+  <%= f.label :video_link, "Video Link:" %>
+  <%= f.text_field :video_link %>
+
+  <%= f.label :jd_answer, "Answering the Job Description:" %>
+  <%= f.text_area :jd_answer, :size=> '50x10' %>
+
+  <%= f.label :what_i_would_do, "If I was in this position:" %>
+  <%= f.text_area :what_i_would_do, :size=> '50x10' %>
+
+  <%= f.label :item1, "Item 1" %>
+  <%= f.text_field :item1 %>
+
+  <%= f.label :item2, "Item 2" %>
+  <%= f.text_field :item2 %>
+
+  <%= f.label :item3, "Item 3:" %>
+  <%= f.text_field :item3 %>
+
+
+  <%= f.submit %>
+<% end %>
+

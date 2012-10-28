@@ -1,5 +1,7 @@
 <h1> The Pitch: Full Job Description </h1>
 
+<%= link_to "Create a pitch for this job", new_pitch_path(@post_id) %>
+
 <form action="/jobs/results" method="get">
   Job Title: <input type="text" name="job_title" placeholder='<%= @job_title %>'>
   Company Name: <input type="text" name="company_name" placeholder='<%= @company_name %>'>
