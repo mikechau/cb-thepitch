@@ -1,23 +1,23 @@
-<div class="job_search_results">
-	<%= link_to "Back to main page", jobs_path %>
-</div>
+
 <p>
   <%= notice %>
 </p>
 
 <div class="job_description">
+	<h1>Candidate Submission Review</h1>
+	<hr />
 	<ul>
 		<% @pitches_for_company.each do |p| %>
 		  <li>
-			<p><%= p.did %></p>
-			<p><%= p.company %></p>
-			<p><%= p.job_title %></p>
+			<p><b>Job ID:</b> <%= p.did %></p>
 
-
-			<p><%= "Applicant: #{p.first_name} #{p.last_name}" %></p>
-			<p><%= "Video link: #{p.video_link}" %></p>
-			<p><%= "email: #{p.email}" %></p>
+			<p><b>Name:</b> <%= p.first_name.capitalize %> <%= p.last_name.capitalize %></p>
+			<p><b>Position:</b> <%= p.job_title %> 
+			<p><b>Video:</b> <%= p.video_link %></p>
+			<p><b>LinkedIn:</b> <%= p.profile_link %></p>
+			<p><b>E-mail:</b> <%= p.email %> | <b>Phone:</b> <%= p.phone %></p>
 		  </li>
+	<hr />
 		<% end %>
 	</ul>
 </div>

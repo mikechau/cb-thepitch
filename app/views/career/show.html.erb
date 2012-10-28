@@ -1,16 +1,14 @@
 <div class="job_search_results">
-	<h1><%= @pitch.did %></h1>
-	<h1><%= @pitch.company %></h1>
-	<h1><%= @pitch.job_title %></h1>
+	<h2><p><%= notice %></p></h2>
 </div>
 
 <div class="job_description">
-	<p><%= "Applicant: #{@pitch.first_name} #{@pitch.last_name}" %></p>
-	<p><%= "Video link: #{@pitch.video_link}" %></p>
-	<p><%= "email: #{@pitch.email}" %></p>
 
+	<p><b>Name:</b> <%=@pitch.first_name%> <%=@pitch.last_name%></p>
+	<p><b>E-Mail:</b> <%=@pitch.email%> | <b>Phone:</b> <%=@pitch.phone%>
+	<p><a href="http://<%=@pitch.video_link%>">Video</a> | <a href="http://<%=@pitch.profile_link%>">LinkedIn</a></p>
 
-	<p><%= notice %></p>
+	<hr />
 
 	<p><%= link_to "Delete", pitch_url(@pitch.id), :method => :delete %></p>
 	<p><%= link_to "Edit", edit_pitch_url(@pitch.id) %></p>

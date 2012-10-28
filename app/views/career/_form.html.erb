@@ -15,70 +15,42 @@
 
 
 <div class="job_description">
+
 <%= form_for @pitch do |f| %>
 <p>
   <%= f.label :did, "Job ID" %>
   <%= f.text_field :did, :readonly => true %>
 
-  <%= f.label :job_title, "Job title:" %>
-  <%= f.text_field :job_title, :readonly => true %>
+  <%#= f.label :job_title, "Job Title:" %>
+  <%#= f.text_field :job_title, :readonly => true %>
 
-  <%= f.label :company, "Company:" %>
-  <%= f.text_field :company, :readonly => true %>
+  <%#= f.label :company, "Company:" %>
+  <%#= f.text_field :company, :readonly => true %>
 
-  <%= f.label :location, "Location:" %>
-  <%= f.text_field :location, :readonly => true %>
+  <%#= f.label :location, "Location:" %>
+  <%#= f.text_field :location, :readonly => true %>
 </p>
 
-<p>
-  <%= f.label :first_name, "First Name:" %>
-  <%= f.text_field :first_name %>
-  
+<ul>
+  <li><%= f.label :first_name, "First Name:" %>
+  <%= f.text_field :first_name %> 
   <%= f.label :last_name, "Last Name:" %>
-  <%= f.text_field :last_name %>
+  <%= f.text_field :last_name %></li>
   
-  <%= f.label :email, "email:" %>
-  <%= f.text_field :email %>
+  <li><%= f.label :email, "E-mail:" %>
+  <%= f.text_field :email, :size => 38 %>
+  <%= f.label :phone, "Phone #{}:" %>
+  <%= f.text_field :phone, :size => 37%></li>
 
-  <%= f.label :phone, "phone:" %>
-  <%= f.text_field :phone %>
-</p>
-  <%= f.label :profile_link, "LinkedIn URL:" %>
-  <%= f.text_field :profile_link %>
-
-  <%= f.label :headline, "Headline:" %>
-  <%= f.text_field :headline %>
-<p>
-  <%= f.label :why_you_want_me, "Why you want me:" %>
-  <%= f.text_area :why_you_want_me, :size=> '50x10' %>
-
-  <%= f.label :video_link, "Video Link:" %>
+  <li><%= f.label :video_link, "Video Link:" %>
   <%= f.text_field :video_link %>
-</p>
-
-<p>
-  <%= f.label :jd_answer, "Answering the Job Description:" %>
-  <%= f.text_area :jd_answer, :size=> '50x10' %>
-</p>
-
-<p>
-  <%= f.label :what_i_would_do, "If I was in this position:" %>
-  <%= f.text_area :what_i_would_do, :size=> '50x10' %>
-</p>
-
-<p>
-  <%= f.label :item1, "Item 1" %>
-  <%= f.text_field :item1 %>
-
-  <%= f.label :item2, "Item 2" %>
-  <%= f.text_field :item2 %>
-
-  <%= f.label :item3, "Item 3:" %>
-  <%= f.text_field :item3 %>
-</p>
+  <%= f.label :profile_link, "LinkedIn:" %>
+  <%= f.text_field :profile_link, :size => 36 %></li>
+</ul>
 
 <p>
   <%= f.submit %>
 </p>
 <% end %>
+
 </div>
