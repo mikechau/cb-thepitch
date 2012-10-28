@@ -9,7 +9,7 @@ post   "/jobs/description/:did/pitches"          => 'career#create'
 
 get    "/jobs/description/:did/pitches/new"      => 'career#new',      :as => :new_pitch
 
-get    "/jobs/description/:did/pitches/:id"      => 'career#show',     :as => :pitch
+get    "/jobs/description/:did"      => 'career#show',     :as => :pitch
 delete "/jobs/description/:did/pitches/:id"      => 'career#destroy'
     
 put    "/jobs/description/:did/pitches/:id"      => 'career#update'

@@ -6,9 +6,11 @@
 <div class="job_description">
 	<h1>Candidate Submission Review</h1>
 	<hr />
+	
 	<ul>
 		<% @pitches_for_company.each do |p| %>
 		  <li>
+		  	<% if @pitches_input == p.did %>
 			<p><b>Job ID:</b> <%= p.did %></p>
 
 			<p><b>Name:</b> <%= p.first_name.capitalize %> <%= p.last_name.capitalize %></p>
@@ -18,6 +20,7 @@
 			<p><b>E-mail:</b> <%= p.email %> | <b>Phone:</b> <%= p.phone %></p>
 		  </li>
 	<hr />
+		<% end %>
 		<% end %>
 	</ul>
 </div>
