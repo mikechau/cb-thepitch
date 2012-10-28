@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Careerbuilder</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <title>The Pitch</title>
+  	<%= stylesheet_link_tag    "application", :media => "all" %>
+  	<%= javascript_include_tag "application" %>
+  	<%= csrf_meta_tags %>
+
 </head>
 <body>
+<div class="title_bar" >
+	<a href="/jobs"><img src="/assets/thepitch_header.png"></a>
+</div>
 
 <%= yield %>
 

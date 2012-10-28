@@ -1,0 +1,95 @@
+html {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	
+	background-image: url("/assets/background3.jpeg");
+
+	background-position:  absolute;
+
+	background-size: 100% 100%;
+	font-size: 20px;
+	font-family: sans-serif;
+	color: white;
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+}
+
+.title_bar {
+	margin: 25px 100px 0px 100px;
+	color: #C7560A;
+	background-color: black;
+	opacity:0.6;
+}
+
+.job_search {
+	margin: 17% 100px 0px 100px;
+
+	padding: 5px;
+	color: white;
+	background-color: black;
+	
+	height: 50px;
+	opacity:0.6;
+	vertical-align: center;
+	text-align: center;
+
+}
+
+.content {
+	margin: 0px 100px 0px 100px;
+	padding: 5px;
+	background-color: black;
+	height: 200px;
+	opacity:0.8;
+}
+
+.search_results {
+	margin: 0px 100px 0px 100px;
+	padding: 5px;
+	color: white;
+	background-color: black;
+	height: 100%;
+	opacity:0.8;
+}
+
+.job_search_results {
+	margin: 0px 100px 0px 100px;
+	padding: 5px;
+	color: white;
+	background-color: #ff7400;
+	opacity: 0.95;
+}
+
+.result_title {
+	margin: 0px 100px 0px 100px;
+	padding: 5px;
+	color: black;
+	background-color: #ff7400;
+	opacity: 0.6;
+}
+
+ul {
+	list-style-type: none;	
+
+}
+
+tbody tr:nth-child(odd) td {
+  background: #41444C;
+}
+
+tbody { width: 100%;}
+
+table { width:100%;}
+
+div#parent_div {display: table;}
+div#child {display: table;} }
+div#opacity {display: table;}
+
+a:link {text-decoration:none; color: #F6AD1A; font-weight: bold;}
+a:visited {text-decoration:none;}
+.search_results a:hover {text-decoration:none;  background-color: #F6AD1A; color: white;}
+a:active {text-decoration:none; color: ##F6AD1A;}

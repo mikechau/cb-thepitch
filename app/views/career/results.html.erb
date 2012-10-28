@@ -1,19 +1,37 @@
-<h1> The Pitch: Results </h1>
 
-<form action="/jobs/results" method="get">
-  Job Title: <input type="text" name="job_title" placeholder='<%= @job_title %>' value='<%= @job_title %>'>
-  Company Name: <input type="text" name="company_name" placeholder='<%= @company_name %>'>
-  Location: <input type="text" name="location" placeholder='<%= @location %>'>
-  <input type="submit" name="submit" value="Submit Form">
-</form>
 
-<ul>
-<% @search_results.each do |result| %>
-	<% post_id = result["DID"] %>
-		<li><b><%= result["JobTitle"] %></b> | <%= result["Company"] %> | <%= result["PostedDate"] %></li>
-		<li><%= link_to "View Job Description", "/jobs/description/#{post_id}" %></li>
-		<li><p>Job Type: <%= result["EmploymentType"] %> | <%= result["Location"] %></p></li>
-		<li><p>Summary: <%= result["DescriptionTeaser"] %></p></li>
-	<% end %>
-</ul>
+<div class="job_search_results">
+	<form action="/jobs/results" method="get">
+			Job Title: <input type="text" name="job_title" placeholder='<%= @job_title %>' value='<%= @job_title %>'>
+			Company Name: <input type="text" name="company_name" placeholder='<%= @company_name %>'>
+			Location: <input type="text" name="location" placeholder='<%= @location %>'>
+			<input type="submit" name="submit" value="Submit Form">
+	</form>
+</div>
 
+<div class="search_results">
+	<h2> Results </h2>
+	<table>
+		
+		
+			<% @search_results.each do |result| %>
+			<% post_id = result["DID"] %>
+				<tr>
+					<td>
+						<ul>
+							<div class="parent_div">
+								<div id="opacity">
+									<div id="child">
+							<li><a href="/jobs/description/<%= post_id %>"<b><%= result["JobTitle"] %></b></a> | <%= result["Company"] %> | <%= result["PostedDate"] %></li>
+							<li><p>Job Type: <%= result["EmploymentType"] %> | <%= result["Location"] %></p></li>
+							<li><p>Summary: <%= result["DescriptionTeaser"] %></p></li>
+									</div>
+								</div>
+							</div>
+						</ul>
+					</td>
+				</tr>
+			<% end %>
+		
+	</table>
+</div>
