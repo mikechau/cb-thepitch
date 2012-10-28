@@ -9,10 +9,10 @@
 
 <ul>
 <% @search_results.each do |result| %>
-	<li><b><%= result["JobTitle"] %></b> | <%= result["Company"] %> | <%= result["PostedDate"] %></li>
-	<li><a href="link">View Full Description</a></li>
-	<li><p>Job Type: <%= result["EmploymentType"] %> | <%= result["Location"] %></p></li>
-	<li><p>Summary: <%= result["DescriptionTeaser"] %></p></li>
-<% end %>
-
+	<% post_id = result["DID"] %>
+		<li><b><%= result["JobTitle"] %></b> | <%= result["Company"] %> | <%= result["PostedDate"] %></li>
+		<li><%= link_to "View Job Description", "/jobs/description/#{post_id}" %></li>
+		<li><p>Job Type: <%= result["EmploymentType"] %> | <%= result["Location"] %></p></li>
+		<li><p>Summary: <%= result["DescriptionTeaser"] %></p></li>
+	<% end %>
 </ul>

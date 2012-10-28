@@ -2,6 +2,7 @@ Careerbuilder::Application.routes.draw do
 
 get "/jobs" => 'career#index'
 get "/jobs/results" => 'career#results'
+get "/jobs/description/:id" => 'career#description'
 #post "/jobs/results" => 'career#create'
   # The priority is based upon order of creation:
   # first created -> highest priority.

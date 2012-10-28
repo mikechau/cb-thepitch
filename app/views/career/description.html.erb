@@ -1,0 +1,21 @@
+<h1> The Pitch: Full Job Description </h1>
+
+<form action="/jobs/results" method="get">
+  Job Title: <input type="text" name="job_title" placeholder='<%= @job_title %>'>
+  Company Name: <input type="text" name="company_name" placeholder='<%= @company_name %>'>
+  Location: <input type="text" name="location" placeholder='<%= @location %>'>
+  <input type="submit" name="submit" value="Submit Form">
+</form>
+
+
+<ul>
+
+		<li><b><%= @result["JobTitle"] %></b> | <%= @result["Company"] %> | <%= @result["BeginDate"] %> - <%= @result["EndDate"] %> </li>
+		<li><p>Job Type: <%= @result["EmploymentType"] %> | <%= @result["LocationCity"] %>, <%= @result["LocationState"] %></p></li>
+		<li><p>Job Description:</p><%= CGI::unescapeHTML(@result["JobDescription"]).gsub(/<br\s*\/?>/, '').gsub(/(&nbsp;|\s)+/, " ").html_safe %></li>
+		<li><p>Requirements:</p><p>Degree: <%= @result["DegreeRequired"] %></p></li>
+		<li><p>Job Requirements: <%= @result["JobRequirements"] %></p></li>
+		<li><p>Pay Per: <%= @result["PayPer"] %>, <%= @result["PayHighLowFormatted"] %></p></li>
+		<li><p>Contact: <%= @result["ContactInfoName"] %>, Number: <%= @result["ContactInfoPhone"] %></p></li>
+
+</ul>

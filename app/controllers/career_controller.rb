@@ -39,6 +39,7 @@ class CareerController < ApplicationController
 		@company_name = params[:company_name]
 		@location = params[:location]
 
+
 		@job_title2 = @job_title.to_s.gsub(/,*\s+/,'+')
 		@company_name2 = @company_name.to_s.gsub(/,*\s+/,'+')
 		@location2 = @location2.to_s.gsub(/,*\s+/,'+')
@@ -47,6 +48,19 @@ class CareerController < ApplicationController
 		json_response = open(url).read
 		output = JSON.parse(json_response)
 		@search_results = output["ResponseJobSearch"]["Results"]["JobSearchResult"]
+
+	end
+
+   def description
+
+   		@post_id = params[:id]
+
+   		url = "http://api.careerbuilder.com/v1/job?DeveloperKey=WDTX43Z6Z0TD34QLFVRL&DID=#{@post_id}&OutputJson=true"
+
+		json_response = open(url).read
+		output = JSON.parse(json_response)
+		@result = output["ResponseJob"]["Job"]
+
 	end
 
 end

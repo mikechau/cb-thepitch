@@ -24,6 +24,7 @@ gem 'jquery-rails'
 
 gem 'cb_api', :git => 'git://github.com/jasonlevenscb/cb_api.git'
 gem 'awesome_print'
+gem 'sanitize'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
