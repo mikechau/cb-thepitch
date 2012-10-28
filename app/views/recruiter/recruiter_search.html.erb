@@ -1,0 +1,14 @@
+
+<h1>Recruiter: type in your company name to view submitted pitches</h1>
+<%= form_tag recruiter_index_url, :method => "get" do %>
+  <%= label_tag(:company, "Search for:") %>
+  <%= text_field_tag(:company) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
+<p>
+  <%= notice %>
+</p>
+
+

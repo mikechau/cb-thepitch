@@ -1,19 +1,22 @@
 Careerbuilder::Application.routes.draw do
 
-get "/jobs" => 'career#index'
-get "/jobs/results" => 'career#results'
-get "/jobs/description/:did" => 'career#description'
+get    "/jobs"                                   => 'career#index',    :as => :jobs
+get    "/jobs/results"                           => 'career#results'
+get    "/jobs/description/:did"                  => 'career#description'
 
-get    "/jobs/description/:did/pitches"          => 'career#index',  :as => :pitches
+get    "/jobs/description/:did/pitches"          => 'career#index',    :as => :pitches
 post   "/jobs/description/:did/pitches"          => 'career#create'
 
-get    "/jobs/description/:did/pitches/new"      => 'career#new',    :as => :new_pitch
+get    "/jobs/description/:did/pitches/new"      => 'career#new',      :as => :new_pitch
 
-get    "/jobs/description/:did/pitches/:id"      => 'career#show',   :as => :pitch
+get    "/jobs/description/:did/pitches/:id"      => 'career#show',     :as => :pitch
 delete "/jobs/description/:did/pitches/:id"      => 'career#destroy'
     
 put    "/jobs/description/:did/pitches/:id"      => 'career#update'
-get    "/jobs/description/:did/pitches/:id/edit" => 'career#edit',   :as => :edit_pitch
+get    "/jobs/description/:did/pitches/:id/edit" => 'career#edit',     :as => :edit_pitch
+
+get    "/recruiter"                              => 'recruiter#recruiter_search', :as => :recruiter
+get    "/recruiter/index"                        => 'recruiter#recruiter_index',  :as => :recruiter_index
 
 
 #post "/jobs/results" => 'career#create'
