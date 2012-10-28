@@ -2,8 +2,8 @@ html {
 	padding: 0px;
 	margin: 0px;
 }
-/**/
-/*http://25.media.tumblr.com/tumblr_mc5ql02Wn81rjrbw6o1_500.gif*/
+
+
 body {
 	background-color: black;
 	background-image: url("/assets/background3.jpeg");
@@ -160,8 +160,11 @@ a:active {text-decoration:none; color: ##F6AD1A;}
 	height: 100%;
 	opacity:0.8;
 
+
 	 -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     -khtml-border-radius: 20px;
     border-radius: 20px;
 }
+
+

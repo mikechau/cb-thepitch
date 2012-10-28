@@ -3,11 +3,16 @@ require 'awesome_print'
 
 class RecruiterController < ApplicationController
   
+  @layout = 'homepage'
+
   def recruiter_search    
   end
 
   def recruiter_index
-    
+    @pitches_input=params[:did]
+
+     @home_page = true
+
      @pitches = Pitch.all     
      @pitches_for_company = []
      
@@ -37,5 +42,6 @@ class RecruiterController < ApplicationController
      end
   
   end
+
 
 end
