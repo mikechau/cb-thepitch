@@ -1,17 +1,56 @@
 <div class="job_search_results">
-	<h2><p><%= notice %></p></h2>
+	<h3><p><%= notice %></p></h3>
 </div>
 
 <div class="job_description">
 
-	<p><b>Name:</b> <%=@pitch.first_name%> <%=@pitch.last_name%></p>
-	<p><b>E-Mail:</b> <%=@pitch.email%> | <b>Phone:</b> <%=@pitch.phone%>
+	<h2><%=@pitch.first_name%> <%=@pitch.last_name%>'s Pitch</h2s>
+  <p><b><%=@pitch.job_title%></b></p>
+  <p><%=@pitch.company%></p>
+	
+	</div>
+	
+	<div class="job_description">
+	<div id="leftcolumn"> <%= image_tag("bioimage.png")%></div>
+	<div id="rightcolumn">  
+	  <p><%=@pitch.headline%></p>
+	  <p><%=@pitch.why_you_want_me%></p>
+	  <p><b>E-Mail:</b> <%=@pitch.email%> | <b>Phone:</b> <%=@pitch.phone%></p>
+		</div>
+<div class="clear"></div>
+</div>
+	<div class="job_description">
 	<p><a href="http://<%=@pitch.video_link%>">Video</a> | <a href="http://<%=@pitch.profile_link%>">LinkedIn</a></p>
+	</div>
+	
+	<div class="job_description">
+	<p><b>Answering the Job Description:</b>   <%=@pitch.jd_answer%></p>
+</div>
 
-	<hr />
+<div class="job_description">
+	<p><b>If I were in this position:</b>      <%=@pitch.what_i_would_do%></p>
+</div>
 
+	<% if @pitch.item1 != nil %>
+	  <div class="job_description">
+	  <p><b>Additional info:</b></p>
+    <p><b>Item 1:</b>                          <%=@pitch.item1%></p>
+	
+	  <% if @pitch.item2 != nil %>
+		  <p><b>Item 2:</b>                          <%=@pitch.item2%></p>
+	  <%end%>
+	  <% if @pitch.item3 != nil %>
+		  <p><b>Item 3:</b>                          <%=@pitch.item3%></p>
+	  <%end%>
+	</div>
+	<% end %>
+	
+	
+	<div class="job_description">
 	<p><%= link_to "Delete", pitch_url(@pitch.id), :method => :delete %></p>
 	<p><%= link_to "Edit", edit_pitch_url(@pitch.id) %></p>
 	<p><%= link_to "Back to index", pitches_url %></p>
 </div>
+
+
 

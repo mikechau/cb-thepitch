@@ -13,7 +13,8 @@
 
 <div class="job_description">
 
-	<h2> Full Job Description: <%= link_to "[Pitch]", new_pitch_path(@post_id) %></h2>
+	<h2 style="text-align: right;"> <%= link_to image_tag("pitch_btn.png"), new_pitch_path(@post_id) %></h2>
+	<h2> Full Job Description: </h2>
 
 	<ul>
 		<li><b><%= @result["JobTitle"] %></b> | <%= @result["Company"] %> | <%= @result["BeginDate"] %> - <%= @result["EndDate"] %> </li>

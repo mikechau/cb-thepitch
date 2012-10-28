@@ -1,5 +1,4 @@
 
-
 <% if @pitch.errors.messages.any? %>
   <ul>
     <% @pitch.errors.messages.each do |key, value| %>
@@ -28,7 +27,7 @@
   <%#= f.text_field :company, :readonly => true %>
 
   <%#= f.label :location, "Location:" %>
-  <%#= f.text_field :location, :readonly => true %>
+  <%#= f.text_field :location, :readonly => true%>
 </p>
 
 <ul>
@@ -48,9 +47,38 @@
   <%= f.text_field :profile_link, :size => 36 %></li>
 </ul>
 
-<p>
-  <%= f.submit %>
-</p>
+  <ul>
+    <li><%= f.label :headline, "Headline:"  %>
+    <%= f.text_field :headline, :size => 89 %> <br>
+    <%= f.label :why_you_want_me, "Why you want me:" %>
+    <%= f.text_field :why_you_want_me, :size => 73 %></li><br>
+    
+    <li><%= f.label :jd_answer, "Answering the Job Description:" %><br>
+    <%= f.text_area :jd_answer, :size=> '77x10' %><br>
+ 
+    <%= f.label :what_i_would_do, "If I were in this position:" %><br>
+    <%= f.text_area :what_i_would_do, :size=> '77x10' %>
+ 
+
+    <li><%= f.label :item1, "Item 1" %>
+    <%= f.text_field :item1 %><br>
+    <%= f.label :item2, "Item 2" %>
+    <%= f.text_field :item2 %><br>
+    <%= f.label :item3, "Item 3" %>
+    <%= f.text_field :item3 %>
+    
+  
+    
+  </ul>
+  
+
+    <%= f.submit %>
+  <p> Job Description
+    <%= CGI::unescapeHTML(@result["JobDescription"]).gsub(/<br\s*\/?>/, '').gsub(/(&nbsp;|\s)+/, " ").html_safe %>
+    
+  </p>
+
+ 
 <% end %>
 
 </div>

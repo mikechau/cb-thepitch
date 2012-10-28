@@ -75,8 +75,16 @@ class CareerController < ApplicationController
   def new
     @pitch = Pitch.new   
     @pitch.did = params[:did]
-    # @pitch.company = "CareerBuilder"
-    # @pitch.job_title = "Program Manager"
+    # @pitch.company = params[:company]
+    # @pitch.job_title = params[:job_title]
+    
+    @post_id = params[:did]
+
+ 		url = "http://api.careerbuilder.com/v1/job?DeveloperKey=WDTX43Z6Z0TD34QLFVRL&DID=#{@post_id}&OutputJson=true"
+
+	json_response = open(url).read
+	output = JSON.parse(json_response)
+	@result = output["ResponseJob"]["Job"]
   end
   
   def create
