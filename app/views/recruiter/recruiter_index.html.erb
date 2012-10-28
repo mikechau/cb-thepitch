@@ -1,22 +1,24 @@
-<%= link_to "Back to main page", jobs_path %>
-
+<div class="job_search_results">
+	<%= link_to "Back to main page", jobs_path %>
+</div>
 <p>
   <%= notice %>
 </p>
 
+<div class="job_description">
+	<ul>
+		<% @pitches_for_company.each do |p| %>
+		  <li>
+			<p><%= p.did %></p>
+			<p><%= p.company %></p>
+			<p><%= p.job_title %></p>
 
-<ul>
-<% @pitches_for_company.each do |p| %>
-  <li>
-	<p><%= p.did %></p>
-	<p><%= p.company %></p>
-	<p><%= p.job_title %></p>
 
-
-	<p><%= "Applicant: #{p.first_name} #{p.last_name}" %></p>
-	<p><%= "Video link: #{p.video_link}" %></p>
-	<p><%= "email: #{p.email}" %></p>
-  </li>
-<% end %>
-</ul>
-
+			<p><%= "Applicant: #{p.first_name} #{p.last_name}" %></p>
+			<p><%= "Video link: #{p.video_link}" %></p>
+			<p><%= "email: #{p.email}" %></p>
+		  </li>
+		<% end %>
+	</ul>
+</div>
+ 

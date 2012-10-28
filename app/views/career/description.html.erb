@@ -1,6 +1,6 @@
 
 
-<%= link_to "Create a pitch for this job", new_pitch_path(@post_id) %>
+
 
 <div class="job_search_results">
 <form action="/jobs/results" method="get">
@@ -12,12 +12,15 @@
 </div>
 
 <div class="job_description">
-	<h2> Full Job Description </h2>
+
+	<h2> Full Job Description: <%= link_to "[Pitch]", new_pitch_path(@post_id) %></h2>
+
 	<ul>
 		<li><b><%= @result["JobTitle"] %></b> | <%= @result["Company"] %> | <%= @result["BeginDate"] %> - <%= @result["EndDate"] %> </li>
 		<li><p><b> Job Type: </b><%= @result["EmploymentType"] %> | <%= @result["LocationCity"] %>, <%= @result["LocationState"] %></p></li>
 		<li><p><b>Job Description:</b></p><%= CGI::unescapeHTML(@result["JobDescription"]).gsub(/<br\s*\/?>/, '').gsub(/(&nbsp;|\s)+/, " ").html_safe %></li>
-		<li><p><b>Requirements:</b></p><p>Degree: <%= @result["DegreeRequired"] %></p></li>
+		<li><p><b>Requirements:</b></p>
+			<p>Degree: <%= @result["DegreeRequired"] %></p></li>
 		<li><p><b>Job Requirements: </b><%= @result["JobRequirements"] %></p></li>
 		<li><p>><b>Pay Per: </b><%= @result["PayPer"] %>, <%= @result["PayHighLowFormatted"] %></p></li>
 		<li><p></b>Contact: </b><%= @result["ContactInfoName"] %>, Number: <%= @result["ContactInfoPhone"] %></p></li>

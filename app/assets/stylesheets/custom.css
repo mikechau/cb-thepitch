@@ -57,7 +57,7 @@ body {
 }
 
 .job_search_results {
-	margin: 0px 100px 0px 100px;
+	margin: 25px 100px 0px 100px;
 	padding: 5px;
 	color: white;
 	background-color: #ff7400;
@@ -96,7 +96,7 @@ a:active {text-decoration:none; color: ##F6AD1A;}
 
 
 .job_description {
-	margin: 0px 100px 0px 100px;
+	margin: 25px 100px 0px 100px;
 	padding: 5px;
 	color: white;
 	background-color: black;
